@@ -10,5 +10,7 @@ namespace HoneyWell.Flight.Stream.PriorityService.Data.Repositories
     {
         Task<FlightMetadata> GetFlightMetadata(int flightId);
         Task<bool> AddFlightMetadata(FlightMetadata flight);
+
+        Task<IEnumerable<FlightMetadata>> GetFlightsMetadata(List<int> flightIds);
     }
 }

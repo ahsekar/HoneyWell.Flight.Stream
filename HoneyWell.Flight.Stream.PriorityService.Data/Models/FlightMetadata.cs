@@ -12,7 +12,7 @@ namespace HoneyWell.Flight.Stream.PriorityService.Data.Models
 
         public string FileRequestType { get; set; }
 
-        
+        public string PassengerType { get; set; }        
 
     }
 }

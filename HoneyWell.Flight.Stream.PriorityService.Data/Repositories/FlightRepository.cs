@@ -73,5 +73,12 @@ namespace HoneyWell.Flight.Stream.PriorityService.Data.Repositories
             var flight = _dbContext.FlightMetadata.FirstOrDefault(flight => flight.FlightId == flightId);
             return flight;
         }
+
+        public async Task<IEnumerable<FlightMetadata>> GetFlightsMetadata(List<int> flightIds)
+        {
+
+            var flightsMetadata = _dbContext.FlightMetadata.Where(flight => flightIds.Contains(flight.FlightId));
+            return flightsMetadata;
+        }
     }
 }
