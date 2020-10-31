@@ -16,4 +16,12 @@ namespace HoneyWell.Flight.Stream.Core.Enums
 		Private,
 		Commercial
 	}
+
+	public enum DataTransferStatus
+	{
+		None,
+		NotStarted,
+		Paused,
+		Completed
+	}
 }
