@@ -8,24 +8,27 @@
     ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
-    "C:\\Users\\himanchal.singh\\.nuget\\packages\\": {},
+    "C:\\Users\\Tamal\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\himanchal.singh\\source\\repos\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
+      "projectUniqueName": "C:\\HoneyWell\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
       "projectName": "HoneyWell.Flight.Stream",
-      "projectPath": "C:\\Users\\himanchal.singh\\source\\repos\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
-      "packagesPath": "C:\\Users\\himanchal.singh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\himanchal.singh\\source\\repos\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\obj\\",
+      "projectPath": "C:\\HoneyWell\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
+      "packagesPath": "C:\\Users\\Tamal\\.nuget\\packages\\",
+      "outputPath": "C:\\HoneyWell\\HoneyWell.Flight.Stream\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\himanchal.singh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Tamal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"

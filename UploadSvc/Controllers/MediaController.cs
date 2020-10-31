@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UploadSvc.BusinesOperation;
 
 namespace UploadSvc.Controllers
 {
@@ -11,30 +12,39 @@ namespace UploadSvc.Controllers
     [ApiController]
     public class MediaController : ControllerBase
     {
+
+        private IBusiness _business;
+        public MediaController(IBusiness business)
+        {
+            _business = business;
+        }
+
         // GET: api/Media
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        //[HttpGet]
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
-        // GET: api/Media/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //// GET: api/Media/5
+        //[HttpGet("{id}", Name = "Get")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
-        // POST: api/Media
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        //// POST: api/Media
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //}
 
         // PUT: api/Media/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+
+
         }
 
         // DELETE: api/ApiWithActions/5
