@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using UploadSvc.BusinesOperation;
+using UploadSvc.RepositoryOperation;
 
 namespace UploadSvc
 {
@@ -27,6 +28,8 @@ namespace UploadSvc
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IBusiness>(new Business());
+            services.AddSingleton<IRepositoryOperation>(new RepositoryOperation.RepositoryOperation());
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

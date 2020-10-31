@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HoneyWell.Flight.Stream.Core;
+using UploadSvc.RepositoryOperation;
 
 namespace UploadSvc.BusinesOperation
 {
@@ -13,14 +14,22 @@ namespace UploadSvc.BusinesOperation
     public class Business : IBusiness
     {
 
+        private IRepositoryOperation _repositoryOperation;
+        public Business(IRepositoryOperation repositoryOperation)
+        {
+            _repositoryOperation = repositoryOperation ?? throw new ArgumentNullException();
+        }
+
         /// <summary>
         /// This method will check if media is available in flight database or not
         /// </summary>
         /// <param name="guid"></param>
         /// <returns></returns>
-        public bool IfAvailable(Guid guid)
+        public bool IfAvailable(Flight flight)
         {
-            throw new NotImplementedException();
+            Flight flightOp = _repositoryOperation.GetFlightDetails(flight);
+            return _repositoryOperation.GetMediaAvailability(flightOp);
+
         }
 
         /// <summary>
@@ -30,6 +39,7 @@ namespace UploadSvc.BusinesOperation
         /// <returns></returns>
         public bool UploadMediaStream(Flight flight)
         {
+
             throw new NotImplementedException();
         }
     }
