@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace HoneyWell.Flight.PriorityService.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Produces("application/json")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class PriorityController : ControllerBase
     {
