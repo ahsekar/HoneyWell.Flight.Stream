@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Chandan\\CodingSamples\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj": {}
+    "C:\\Users\\Rakesh.Akhileswaran\\Source\\Repos\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj": {}
   },
   "projects": {
-    "C:\\Chandan\\CodingSamples\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj": {
+    "C:\\Users\\Rakesh.Akhileswaran\\Source\\Repos\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Chandan\\CodingSamples\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
+        "projectUniqueName": "C:\\Users\\Rakesh.Akhileswaran\\Source\\Repos\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
         "projectName": "HoneyWell.Flight.Stream",
-        "projectPath": "C:\\Chandan\\CodingSamples\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
-        "packagesPath": "C:\\Users\\Chandan_Kumar22\\.nuget\\packages\\",
-        "outputPath": "C:\\Chandan\\CodingSamples\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\obj\\",
+        "projectPath": "C:\\Users\\Rakesh.Akhileswaran\\Source\\Repos\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
+        "packagesPath": "C:\\Users\\Rakesh.Akhileswaran\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rakesh.Akhileswaran\\Source\\Repos\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Chandan_Kumar22\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rakesh.Akhileswaran\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,8 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dcsartifacts.dell.com/artifactory/api/nuget/v3/nuget-local": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
@@ -56,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
