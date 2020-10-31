@@ -44,7 +44,7 @@ namespace UploadSvc.BusinesOperation
             }
             catch (Exception)
             {
-                //logger
+                //logger to log the exceptions
                 return false;
             }
         }
