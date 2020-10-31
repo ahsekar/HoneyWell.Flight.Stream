@@ -8,32 +8,34 @@
     ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Chandan_Kumar22\\.nuget\\packages\\": {},
+    "C:\\Users\\Tamal\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Chandan\\CodingSamples\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
+      "projectUniqueName": "C:\\HoneyWell\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
       "projectName": "HoneyWell.Flight.Stream",
-      "projectPath": "C:\\Chandan\\CodingSamples\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
-      "packagesPath": "C:\\Users\\Chandan_Kumar22\\.nuget\\packages\\",
-      "outputPath": "C:\\Chandan\\CodingSamples\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream\\obj\\",
+      "projectPath": "C:\\HoneyWell\\HoneyWell.Flight.Stream\\HoneyWell.Flight.Stream.csproj",
+      "packagesPath": "C:\\Users\\Tamal\\.nuget\\packages\\",
+      "outputPath": "C:\\HoneyWell\\HoneyWell.Flight.Stream\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Chandan_Kumar22\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Tamal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dcsartifacts.dell.com/artifactory/api/nuget/v3/nuget-local": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.1": {
@@ -49,21 +51,10 @@
     "frameworks": {
       "netstandard2.1": {
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "NETStandard.Library": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

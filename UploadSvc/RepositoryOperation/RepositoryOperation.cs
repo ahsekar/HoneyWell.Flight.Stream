@@ -20,11 +20,28 @@ namespace UploadSvc.RepositoryOperation
 
         }
 
+
+
         public bool GetMediaAvailability(Flight flightDetails)
         {
             throw new NotImplementedException();
         }
 
-        
+
+        public Flight GetFlightDetails(Flight flightDetails)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool InsertStream(MediaFile mediaFile)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateStream(MediaFile mediaFile)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

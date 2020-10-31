@@ -14,7 +14,7 @@ namespace UploadSvc.BusinesOperation
     {
         bool UploadMediaStream(Flight flight);
 
-        bool IfAvailable(Guid guid);
+        bool IfAvailable(Flight flight);
 
     }
 }
