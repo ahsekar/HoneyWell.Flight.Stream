@@ -17,32 +17,36 @@ namespace HoneyWell.Flight.Stream.PriorityService.Data.Repositories
         {
             this._dbContext = dbContext;
             this._logger = logger;
-
+            /// Create the seed list of flight Metadata
             var flightMetadata1 = new FlightMetadata() { 
                 FileRequestType = "Upload",
                 FlightId = 1,
-                FlightType = "Chartered"
+                FlightType = "Chartered",
+                PassengerType = "Business"
             };
 
             var flightMetadata2 = new FlightMetadata()
             {
                 FileRequestType = "Upload",
                 FlightId = 2,
-                FlightType = "Cargo"
+                FlightType = "Cargo",
+                PassengerType = "Business"
             };
 
             var flightMetadata3 = new FlightMetadata()
             {
                 FileRequestType = "Upload",
                 FlightId = 3,
-                FlightType = "Passenger"
+                FlightType = "Passenger",
+                PassengerType = "Business"
             };
 
             var flightMetadata4 = new FlightMetadata()
             {
                 FileRequestType = "Download",
                 FlightId = 4,
-                FlightType = "Medical"
+                FlightType = "Medical",
+                PassengerType = "Business"
             };
 
             AddFlightMetadata(flightMetadata1);
@@ -66,13 +70,23 @@ namespace HoneyWell.Flight.Stream.PriorityService.Data.Repositories
 
             return true;
         }
-
+        /// <summary>
+        /// get flight metada data by ID
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <returns></returns>
         public async Task<FlightMetadata> GetFlightMetadata(int flightId)
         {
 
             var flight = _dbContext.FlightMetadata.FirstOrDefault(flight => flight.FlightId == flightId);
             return flight;
         }
+
+        /// <summary>
+        /// get flights metada data by ID
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <returns></returns>
 
         public async Task<IEnumerable<FlightMetadata>> GetFlightsMetadata(List<int> flightIds)
         {
