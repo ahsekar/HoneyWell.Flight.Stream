@@ -41,7 +41,7 @@ namespace UploadSvc.Controllers
         //}
 
         // PUT: api/Media/5
-        [HttpPut("{id}")]
+        [HttpPut("{flighdata}")]
         public void Put([FromBody] Flight flighdata)
         {
             //todo call repo method
@@ -49,7 +49,7 @@ namespace UploadSvc.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{guid}")]
         public void Delete(Guid guid)
         {
             //to delete the media file from flight database
