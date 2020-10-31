@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using HoneyWell.Flight.Stream.Core;
@@ -30,7 +31,22 @@ namespace UploadSvc.BusinesOperation
         /// <returns></returns>
         public bool UploadMediaStream(Flight flight)
         {
-            throw new NotImplementedException();
+            try
+            {
+                foreach (var item in flight.FlightMedias)
+                {
+                    FileStream fs = File.Open(item.ToString(), FileMode.Open);
+                    BinaryWriter bw = new BinaryWriter(fs);
+                    bw.Write(item.bytes);
+                    bw.Close();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                //logger
+                return false;
+            }
         }
     }
 }
