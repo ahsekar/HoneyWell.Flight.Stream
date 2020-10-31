@@ -20,7 +20,7 @@ namespace HoneyWell.Flight.PriorityService.Api.Controllers
             _processRules = processRules;
         }
         [HttpGet]
-        public async Task<IActionResult> GetPriority(List<FlightDetails> ruleItems)
+        public async Task<IActionResult> GetPriority(List<int> ruleItems)
         {
             var result = _processRules.ProcessFlightRules(ruleItems);
             return Ok(result);

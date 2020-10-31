@@ -1,5 +1,6 @@
 ﻿using HoneyWell.Flight.PriorityService.Api.Contracts;
 using HoneyWell.Flight.PriorityService.Api.Models;
+using HoneyWell.Flight.Stream.PriorityService.Data.Repositories;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,16 +12,17 @@ namespace HoneyWell.Flight.PriorityService.Api.Business
     public class ProcessRules : IProcessRules
     {
         private readonly ILogger<ProcessRules> _logger;
+        private readonly IFlightRepository _flightRepository;
 
-        public ProcessRules(ILogger<ProcessRules> logger)
+        public ProcessRules(ILogger<ProcessRules> logger, IFlightRepository flightRepository)
         {
             _logger = logger;
+            _flightRepository = flightRepository;
         }
-        public List<RuleItems> ProcessFlightRules(List<FlightDetails> flightDetails)
+        public List<RuleItems> ProcessFlightRules(List<int> flightDetails)
         {
             
             _logger.LogInformation("Processing FlightRules");
-            var flightMetaData = "Fetch from INMemory";
             List<RuleItems> processedRules = new List<RuleItems>();
             try
             {

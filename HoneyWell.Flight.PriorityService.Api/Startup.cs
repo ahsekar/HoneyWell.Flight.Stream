@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HoneyWell.Flight.PriorityService.Api.Business;
+using HoneyWell.Flight.PriorityService.Api.Contracts;
 using HoneyWell.Flight.Stream.PriorityService.Data;
 using HoneyWell.Flight.Stream.PriorityService.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +34,7 @@ namespace HoneyWell.Flight.PriorityService.Api
             services.AddControllers();
             services.AddDbContext<PriorityServiceDbContext>(context => { context.UseInMemoryDatabase("HoneyWellFlightStream"); });
             services.AddTransient<IFlightRepository, FlightRepository>();
+            services.AddSingleton<IProcessRules, ProcessRules>();
             
             //services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
