@@ -9,18 +9,29 @@ using UploadSvc.BusinesOperation;
 
 namespace UploadSvc.Controllers
 {
+    /// <summary>
+    /// Controller to do operation on media 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class MediaController : ControllerBase
     {
 
         private IBusiness _business;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="business"></param>
         public MediaController(IBusiness business)
         {
             _business = business;
         }
 
-       
+       /// <summary>
+       /// Methpd to upload the media
+       /// </summary>
+       /// <param name="flighdata"></param>
         [HttpPut("{flighdata}")]
         public void UploadMedia([FromBody] Flight flighdata)
         {
@@ -37,11 +48,5 @@ namespace UploadSvc.Controllers
 
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{guid}")]
-        public void Delete(Guid guid)
-        {
-            //to delete the media file from flight database
-        }
     }
 }
