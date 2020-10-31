@@ -1,8 +1,10 @@
-﻿using Amazon.S3;
+﻿using Amazon;
+using Amazon.S3;
 using Amazon.S3.Model;
 using DownloadApiChetan.Modules;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,6 +17,8 @@ namespace DownloadApiChetan.Repository
         private Amazon.RegionEndpoint _s3Region;
         private string _s3BucketName;
         private IAmazonS3 _s3;
+        private List<UploadPartResponse> _uploadResponses;
+        private InitiateMultipartUploadResponse _initialResponse;
         /// <summary>
         /// Bind the S3Region and S3Bucket 
         /// </summary>
@@ -26,32 +30,36 @@ namespace DownloadApiChetan.Repository
             _s3BucketName = s3BucketName;
         }
         /// <summary>
-        /// Download file and get the response
+        /// Initializing the request
         /// </summary>
         /// <param name="filePath"></param>
-        /// <returns></returns>
-        public S3DownloadResponse Download(string filePath)
+        public void Initialize(string filePath)
         {
-            using (var s3 = new AmazonS3Client(_s3Region))
+            _s3 = new AmazonS3Client(accessKey, secretKey, RegionEndpoint.APSouth1);
+            _uploadResponses = new List<UploadPartResponse>();
+            var initiateRequest = new InitiateMultipartUploadRequest
             {
-                var initiateRequest = new GetObjectRequest
-                {
-                    BucketName = _s3BucketName,
-                    Key = filePath
-                };
+                BucketName = _s3BucketName,
+                Key = filePath
+            };
 
-                GetObjectResponse response = null;
-                try
-                {
-                    response = s3.GetObjectAsync(initiateRequest).Result;
-                }
-                catch
-                {
-                    throw;
-                }
-                return new S3DownloadResponse() { HttpStatusCode = response.HttpStatusCode, Stream = response.ResponseStream, ContentLength = response.ContentLength };
-            }
+            _initialResponse = _s3.InitiateMultipartUploadAsync(initiateRequest).Result;
 
+        }
+        public void UploadToBucket(Stream fileData)
+        {
+            var uploadRequest = new UploadPartRequest
+            {
+                BucketName = _s3BucketName,
+                Key = _initialResponse.Key,
+                UploadId = _initialResponse.UploadId,
+                InputStream = fileData,
+                PartNumber = 1,
+                PartSize = fileData.Length,
+            };
+
+            var uploadResponse = _s3.UploadPartAsync(uploadRequest).Result;
+            _uploadResponses.Add(uploadResponse);
         }
     }
 }
