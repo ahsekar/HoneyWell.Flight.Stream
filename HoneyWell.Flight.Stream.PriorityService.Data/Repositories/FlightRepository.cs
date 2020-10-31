@@ -13,7 +13,7 @@ namespace HoneyWell.Flight.Stream.PriorityService.Data.Repositories
 
         private PriorityServiceDbContext _dbContext;
         private readonly ILogger<FlightRepository> _logger;
-        public FlightRepository(PriorityServiceDbContext dbContext, Logger<FlightRepository> logger)
+        public FlightRepository(PriorityServiceDbContext dbContext, ILogger<FlightRepository> logger)
         {
             this._dbContext = dbContext;
             this._logger = logger;

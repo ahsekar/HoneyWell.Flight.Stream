@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using FlightMetadata = HoneyWell.Flight.Stream.PriorityService.Data.Models.FlightMetadata;
 
 namespace HoneyWell.Flight.PriorityService.Api.Business
 {
@@ -22,7 +23,7 @@ namespace HoneyWell.Flight.PriorityService.Api.Business
             _logger = logger;
             _flightRepository = flightRepository;
         }
-        public async Task<List<RuleItems>> ProcessFlightRules(List<int> flightDetails)
+        public async Task<List<FlightMetadata>> ProcessFlightRules(List<int> flightDetails)
         {
             _logger.LogInformation("Processing FlightRules");
             List<RuleItems> processedRules = new List<RuleItems>();
@@ -38,20 +39,17 @@ namespace HoneyWell.Flight.PriorityService.Api.Business
                     item.PrioritySum = Convert.ToInt32((RequestTypes)Enum.Parse(typeof(RequestTypes), item.FileRequestType, true)) +
                                         Convert.ToInt32((PassengerClass)Enum.Parse(typeof(PassengerClass), item.PassengerType, true))+
                                         Convert.ToInt32((FlightTypes)Enum.Parse(typeof(RequestTypes), item.FlightType, true));
-
                 }
-
-                //Sort List based on PrioritySum
-
-
-
-                //Logic for processing end
+                metas.OrderByDescending(x => x.PrioritySum);
+                return metas.ToList();
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message);
             }
-            return processedRules;
+            return null;
         }
+
+        
     }
 }

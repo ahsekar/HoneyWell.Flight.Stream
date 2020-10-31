@@ -34,7 +34,7 @@ namespace HoneyWell.Flight.PriorityService.Api
             services.AddControllers();
             services.AddDbContext<PriorityServiceDbContext>(context => { context.UseInMemoryDatabase("HoneyWellFlightStream"); });
             services.AddTransient<IFlightRepository, FlightRepository>();
-            services.AddSingleton<IProcessRules, ProcessRules>();
+            services.AddTransient<IProcessRules, ProcessRules>();
             
             //services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
