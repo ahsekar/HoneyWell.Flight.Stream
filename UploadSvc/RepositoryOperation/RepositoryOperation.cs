@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using HoneyWell.Flight.Stream.Core.Entities;
+using HoneyWell.Flight.Stream.Core;
 
 namespace UploadSvc.RepositoryOperation
 {
@@ -12,7 +13,7 @@ namespace UploadSvc.RepositoryOperation
     {
 
         private SqlConnection _sqlConnection;
-        private string _connectionString;
+        private string _connectionString = "";
 
         public RepositoryOperation()
         {
