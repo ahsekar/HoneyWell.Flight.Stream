@@ -22,7 +22,14 @@ namespace DownloadApiChetan.Controllers
         {
             this._fileRep = fileRep;
         }
-
+        /// <summary>
+        /// This api is to download the File from the Flite, This is called by intermediate service as FileReader Services.
+        /// FileReader Services is read the file from flite and privide to this API by multipartFormDatacontent.
+        /// </summary>
+        /// <param name="id">File Id</param>
+        /// <param name="fliteNo">Flite No</param>
+        /// <param name="req">MultiPart Reader data consist of header, body etc...</param>
+        /// <returns></returns>
         private async Task<FileUpload> UploadFile(string id,string fliteNo, HttpRequest req)
         {
             var boundary = HeaderUtilities.RemoveQuotes(MediaTypeHeaderValue.Parse(req.ContentType).Boundary);

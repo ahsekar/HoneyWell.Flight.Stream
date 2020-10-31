@@ -13,7 +13,7 @@ namespace MetaDataApi.Data
 		public SQLFlightDataRepo(FlightDataContext schoolDBContext)
 		{
 			this._flightDBContext = schoolDBContext;
-		}			
+		}
 
 		public bool SaveChanges()
 		{
@@ -22,7 +22,16 @@ namespace MetaDataApi.Data
 
 		public IEnumerable<FlightDetails> GetAllFlightData()
 		{
-			return _flightDBContext.FlightDetail?.ToList();
+			return _flightDBContext.FlightDetail.Select(x => new FlightDetails()
+			{
+				Id = x.Id,
+				Flight = _flightDBContext.Flight.Where(i => i.Id == x.FlightId).FirstOrDefault(),
+				DataSize = x.DataSize,
+				DataTransferStatus = x.DataTransferStatus,
+				FlightId = x.FlightId,
+				CreatedDate = x.CreatedDate,
+				UpdatedDate = x.UpdatedDate
+			})?.ToList();
 		}
 
 		public FlightDetails GetFlightDataByFlightNumber(string FlightNumber)
@@ -35,8 +44,17 @@ namespace MetaDataApi.Data
 
 		public void AddFlightData(FlightDetails flightDetails)
 		{
-			if (flightDetails == null)
+			if (flightDetails == null || flightDetails.Flight == null)
 				throw new System.ArgumentNullException(nameof(flightDetails));
+
+			if(flightDetails.Flight.Id == 0 && flightDetails.FlightId == 0)
+				throw new System.ArgumentNullException(nameof(flightDetails.FlightId));
+			
+			if (flightDetails.FlightId == 0)
+				flightDetails.FlightId = flightDetails.Flight.Id;
+
+			if (flightDetails.Flight.Id != flightDetails.FlightId)
+				throw new System.InvalidOperationException(nameof(flightDetails.FlightId));
 
 			_flightDBContext.Add(flightDetails);
 		}

@@ -11,6 +11,7 @@ namespace HoneyWell.Flight.Stream.Core.Entities
 		[Key]
 		public int Id { get; set; }
 		public Flight Flight { get; set; }
+		public int FlightId { get; set; }
 		public double DataSize { get; set; }
 		public DataTransferStatus DataTransferStatus { get; set; }
 
