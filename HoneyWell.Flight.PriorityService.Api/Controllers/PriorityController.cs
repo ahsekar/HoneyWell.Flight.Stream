@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HoneyWell.Flight.PriorityService.Api.Contracts;
+using HoneyWell.Flight.PriorityService.Api.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace HoneyWell.Flight.PriorityService.Api.Controllers
@@ -7,10 +11,19 @@ namespace HoneyWell.Flight.PriorityService.Api.Controllers
     [ApiController]
     public class PriorityController : ControllerBase
     {
-        [HttpGet]
-        public async Task<IActionResult> GetPriority(int flighId, string flightTypes, string passengerclass)
+        private readonly ILogger<PriorityController> _logger;
+        private readonly IProcessRules _processRules;
+
+        public PriorityController(ILogger<PriorityController> logger, IProcessRules processRules)
         {
-            return Ok();
+            _logger = logger;
+            _processRules = processRules;
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetPriority(List<RuleItems> ruleItems)
+        {
+            var result = _processRules.ProcessFlightRules(ruleItems);
+            return Ok(result);
         }
     }
 }
