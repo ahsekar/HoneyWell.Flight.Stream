@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SampleStudentAPI.Data
+namespace MetaDataApi.Data
 {
 	public class SQLFlightDataRepo : IFlightRepo
 	{
@@ -22,15 +22,15 @@ namespace SampleStudentAPI.Data
 
 		public IEnumerable<FlightDetails> GetAllFlightData()
 		{
-			return _flightDBContext.Students?.ToList();
+			return _flightDBContext.FlightDetail?.ToList();
 		}
 
 		public FlightDetails GetFlightDataByFlightNumber(string FlightNumber)
 		{
-			if (_flightDBContext.Students == null)
+			if (_flightDBContext.FlightDetail == null)
 				return null;
 
-			return _flightDBContext.Students.ToList().Where(s => s.Flight.FlightNumber == FlightNumber).FirstOrDefault();
+			return _flightDBContext.FlightDetail.ToList().Where(s => s.Flight.FlightNumber == FlightNumber).FirstOrDefault();
 		}
 
 		public void AddFlightData(FlightDetails flightDetails)

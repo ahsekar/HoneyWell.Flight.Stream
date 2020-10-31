@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using HoneyWell.Flight.Stream.Core;
+using HoneyWell.Flight.Stream.Core.Entities;
 
 namespace UploadSvc.RepositoryOperation
 {
@@ -20,11 +20,28 @@ namespace UploadSvc.RepositoryOperation
 
         }
 
+
+
         public bool GetMediaAvailability(Flight flightDetails)
         {
             throw new NotImplementedException();
         }
 
-        
+
+        public Flight GetFlightDetails(Flight flightDetails)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool InsertStream(MediaFile mediaFile)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateStream(MediaFile mediaFile)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

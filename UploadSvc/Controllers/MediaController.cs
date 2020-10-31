@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using HoneyWell.Flight.Stream.Core;
+using HoneyWell.Flight.Stream.Core.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UploadSvc.BusinesOperation;
@@ -20,31 +20,20 @@ namespace UploadSvc.Controllers
             _business = business;
         }
 
-        // GET: api/Media
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET: api/Media/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        //// POST: api/Media
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        // PUT: api/Media/5
+       
         [HttpPut("{flighdata}")]
-        public void Put([FromBody] Flight flighdata)
+        public void UploadMedia([FromBody] Flight flighdata)
         {
-            //todo call repo method
+            if (flighdata.Id <= 0)
+                throw new ArgumentNullException();
+
+            if (_business.IfAvailable(flighdata))
+            {
+                _business.UploadMediaStream(flighdata);
+            }
+            else
+                throw new Exception("Flight Media Upload is not available now");
+
 
         }
 

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HoneyWell.Flight.Stream.Core.Entities;
+using MetaDataApi.Data;
 using Microsoft.AspNetCore.Mvc;
-using SampleStudentAPI.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,9 +16,9 @@ namespace MetaDataApi.Controllers
 	{
 		private readonly IFlightRepo _repository;
 
-		public MetaDataController(IFlightRepo studentRepo)
+		public MetaDataController(IFlightRepo flightRepo)
 		{
-			_repository = studentRepo;
+			_repository = flightRepo;
 		}
 
 		[HttpGet]
@@ -44,7 +44,7 @@ namespace MetaDataApi.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult CreateStudent(FlightDetails flightDetails)
+		public ActionResult CreateFlightDetails(FlightDetails flightDetails)
 		{
 			_repository.AddFlightData(flightDetails);
 			_repository.SaveChanges();

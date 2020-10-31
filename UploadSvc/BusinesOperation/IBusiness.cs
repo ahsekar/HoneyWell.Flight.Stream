@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using HoneyWell.Flight.Stream.Core;
+using HoneyWell.Flight.Stream.Core.Entities;
 
 namespace UploadSvc.BusinesOperation
 {
@@ -14,7 +14,7 @@ namespace UploadSvc.BusinesOperation
     {
         bool UploadMediaStream(Flight flight);
 
-        bool IfAvailable(Guid guid);
+        bool IfAvailable(Flight flight);
 
     }
 }
