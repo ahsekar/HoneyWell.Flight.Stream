@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HoneyWell.Flight.Stream.Core.Entities
+namespace HoneyWell.Flight.Stream.Core
 {
         public class MediaFile
         {
-            public int MediaFileId { get; set; }
+            public Guid MediaFileId { get; set; }
             public string Type { get; set; }
             public long Size { get; set; }
             public string Name { get; set; }
