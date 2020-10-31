@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HoneyWell.Flight.Stream.Core;
 using UploadSvc.RepositoryOperation;
+using HoneyWell.Flight.Stream.Core.Entities;
 
 namespace UploadSvc.BusinesOperation
 {

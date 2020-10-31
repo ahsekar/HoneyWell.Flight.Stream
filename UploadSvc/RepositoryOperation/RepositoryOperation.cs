@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using HoneyWell.Flight.Stream.Core;
+using HoneyWell.Flight.Stream.Core.Entities;
 
 namespace UploadSvc.RepositoryOperation
 {

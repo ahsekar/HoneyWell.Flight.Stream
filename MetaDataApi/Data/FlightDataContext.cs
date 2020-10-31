@@ -1,7 +1,7 @@
 ﻿using HoneyWell.Flight.Stream.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace SampleStudentAPI.Data
+namespace MetaDataApi.Data
 {
 	public class FlightDataContext : DbContext
 	{		
@@ -10,6 +10,7 @@ namespace SampleStudentAPI.Data
 
 		}
 
-		public DbSet<FlightDetails> Students { get; set; }
+		public DbSet<FlightDetails> FlightDetail { get; set; }
+		public DbSet<Flight> Flight { get; set; }
 	}
 }
