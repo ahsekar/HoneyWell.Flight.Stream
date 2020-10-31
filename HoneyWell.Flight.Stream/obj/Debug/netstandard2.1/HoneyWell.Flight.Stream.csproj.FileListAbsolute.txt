@@ -1,0 +1,9 @@
+C:\Chandan\CodingSamples\HoneyWell.Flight.Stream\HoneyWell.Flight.Stream\bin\Debug\netstandard2.1\HoneyWell.Flight.Stream.deps.json
+C:\Chandan\CodingSamples\HoneyWell.Flight.Stream\HoneyWell.Flight.Stream\bin\Debug\netstandard2.1\HoneyWell.Flight.Stream.dll
+C:\Chandan\CodingSamples\HoneyWell.Flight.Stream\HoneyWell.Flight.Stream\bin\Debug\netstandard2.1\HoneyWell.Flight.Stream.pdb
+C:\Chandan\CodingSamples\HoneyWell.Flight.Stream\HoneyWell.Flight.Stream\obj\Debug\netstandard2.1\HoneyWell.Flight.Stream.AssemblyInfoInputs.cache
+C:\Chandan\CodingSamples\HoneyWell.Flight.Stream\HoneyWell.Flight.Stream\obj\Debug\netstandard2.1\HoneyWell.Flight.Stream.AssemblyInfo.cs
+C:\Chandan\CodingSamples\HoneyWell.Flight.Stream\HoneyWell.Flight.Stream\obj\Debug\netstandard2.1\HoneyWell.Flight.Stream.csproj.CoreCompileInputs.cache
+C:\Chandan\CodingSamples\HoneyWell.Flight.Stream\HoneyWell.Flight.Stream\obj\Debug\netstandard2.1\HoneyWell.Flight.Stream.dll
+C:\Chandan\CodingSamples\HoneyWell.Flight.Stream\HoneyWell.Flight.Stream\obj\Debug\netstandard2.1\HoneyWell.Flight.Stream.pdb
+C:\Chandan\CodingSamples\HoneyWell.Flight.Stream\HoneyWell.Flight.Stream\obj\Debug\netstandard2.1\HoneyWell.Flight.Stream.csprojAssemblyReference.cache

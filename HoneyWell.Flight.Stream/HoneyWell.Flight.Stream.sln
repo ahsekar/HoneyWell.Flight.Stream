@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoneyWell.Flight.Stream", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UploadSvc", "..\UploadSvc\UploadSvc.csproj", "{0716DDD1-2F01-459C-A88B-8AA0AE71F7DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaDataApi", "..\MetaDataApi\MetaDataApi.csproj", "{5B061F94-B1F7-4400-8647-6627B113AEE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoneyWell.Flight.Stream.Core", "..\HoneyWell.Flight.Stream.Core\HoneyWell.Flight.Stream.Core.csproj", "{9F4242A5-7DC8-4241-B9F4-4EDB36F09657}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{ADD297E0-9142-473D-9F9E-B3E61FB00DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADD297E0-9142-473D-9F9E-B3E61FB00DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADD297E0-9142-473D-9F9E-B3E61FB00DEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B061F94-B1F7-4400-8647-6627B113AEE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B061F94-B1F7-4400-8647-6627B113AEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B061F94-B1F7-4400-8647-6627B113AEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B061F94-B1F7-4400-8647-6627B113AEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F4242A5-7DC8-4241-B9F4-4EDB36F09657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F4242A5-7DC8-4241-B9F4-4EDB36F09657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F4242A5-7DC8-4241-B9F4-4EDB36F09657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F4242A5-7DC8-4241-B9F4-4EDB36F09657}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0716DDD1-2F01-459C-A88B-8AA0AE71F7DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0716DDD1-2F01-459C-A88B-8AA0AE71F7DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0716DDD1-2F01-459C-A88B-8AA0AE71F7DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
