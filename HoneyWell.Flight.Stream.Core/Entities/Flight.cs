@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace HoneyWell.Flight.Stream.Core
+namespace HoneyWell.Flight.Stream.Core.Entities
 {
 	public class Flight
 	{
