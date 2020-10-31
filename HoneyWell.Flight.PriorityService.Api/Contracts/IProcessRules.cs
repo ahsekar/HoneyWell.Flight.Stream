@@ -5,6 +5,6 @@ namespace HoneyWell.Flight.PriorityService.Api.Contracts
 {
     public interface IProcessRules
     {
-        List<RuleItems> ProcessFlightRules(List<RuleItems> ruleItems);
+        List<RuleItems> ProcessFlightRules(List<FlightDetails> ruleItems);
     }
 }

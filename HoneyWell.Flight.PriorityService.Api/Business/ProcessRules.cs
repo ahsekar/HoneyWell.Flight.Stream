@@ -3,6 +3,8 @@ using HoneyWell.Flight.PriorityService.Api.Models;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace HoneyWell.Flight.PriorityService.Api.Business
 {
@@ -14,14 +16,18 @@ namespace HoneyWell.Flight.PriorityService.Api.Business
         {
             _logger = logger;
         }
-        public List<RuleItems> ProcessFlightRules(List<RuleItems> ruleItems)
+        public List<RuleItems> ProcessFlightRules(List<FlightDetails> flightDetails)
         {
+            
             _logger.LogInformation("Processing FlightRules");
+            var flightMetaData = "Fetch from INMemory";
             List<RuleItems> processedRules = new List<RuleItems>();
             try
             {
                 //Logic for processing start
-                var items = ruleItems;
+
+
+
                 //Logic for processing end
             }
             catch (Exception ex)
