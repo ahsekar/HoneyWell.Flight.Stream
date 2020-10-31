@@ -26,9 +26,11 @@ namespace UploadSvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var serviceproider= services.BuildServiceProvider();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<IBusiness>(new Business());
+       
             services.AddSingleton<IRepositoryOperation>(new RepositoryOperation.RepositoryOperation());
+            services.AddSingleton<IBusiness>(new Business(serviceproider.GetService<IRepositoryOperation>()));
 
         }
 
