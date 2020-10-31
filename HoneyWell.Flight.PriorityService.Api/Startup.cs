@@ -2,14 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HoneyWell.Flight.Stream.PriorityService.Data;
+using HoneyWell.Flight.Stream.PriorityService.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace HoneyWell.Flight.PriorityService.Api
 {
@@ -26,6 +30,14 @@ namespace HoneyWell.Flight.PriorityService.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<PriorityServiceDbContext>(context => { context.UseInMemoryDatabase("HoneyWellFlightStream"); });
+            services.AddTransient<IFlightRepository, FlightRepository>();
+            
+            //services.AddAutoMapper(typeof(Startup));
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Priority Service API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
