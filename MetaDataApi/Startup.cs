@@ -28,12 +28,12 @@ namespace MetaDataApi
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
-			services.AddDbContext<FlightDataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("FlightDBConnection")));
-			services.AddScoped<IFlightRepo, SQLFlightDataRepo>();
+			//services.AddDbContext<FlightDataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("FlightDBConnection")));
+			services.AddScoped<IFlightRepo, InMemoryFlightDataRepo>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env, FlightDataContext dBContext)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			if (env.IsDevelopment())
 			{
@@ -46,7 +46,7 @@ namespace MetaDataApi
 				endpoints.MapControllers();
 			});
 
-			dBContext.Database.EnsureCreated();
+			//dBContext.Database.EnsureCreated();
 		}
 	}
 }
