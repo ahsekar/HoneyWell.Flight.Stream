@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HoneyWell.Flight.Stream.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UploadSvc.BusinesOperation;
@@ -40,17 +41,18 @@ namespace UploadSvc.Controllers
         //}
 
         // PUT: api/Media/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{flighdata}")]
+        public void Put([FromBody] Flight flighdata)
         {
-
+            //todo call repo method
 
         }
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{guid}")]
+        public void Delete(Guid guid)
         {
+            //to delete the media file from flight database
         }
     }
 }

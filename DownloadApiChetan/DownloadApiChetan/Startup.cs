@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DownloadApiChetan.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,11 @@ namespace DownloadApiChetan
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            var s3Region = Amazon.RegionEndpoint.GetBySystemName(Configuration["Value From appsettings"]);
+            var s3BucketName = Configuration["Value From appsettings"];
+            services.AddScoped<IFileRepository>((o) => {
+                return new FileRepository(s3Region, s3BucketName);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
