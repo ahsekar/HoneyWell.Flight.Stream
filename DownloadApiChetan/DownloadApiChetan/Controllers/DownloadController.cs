@@ -23,7 +23,7 @@ namespace DownloadApiChetan.Controllers
             this._fileRep = fileRep;
         }
 
-        private async Task<FileUpload> UploadFile(string id, HttpRequest req)
+        private async Task<FileUpload> UploadFile(string id,string fliteNo, HttpRequest req)
         {
             var boundary = HeaderUtilities.RemoveQuotes(MediaTypeHeaderValue.Parse(req.ContentType).Boundary);
             var reader = new MultipartReader(boundary.Value, req.Body);
@@ -38,8 +38,8 @@ namespace DownloadApiChetan.Controllers
                     break;
                 }
 
-                fileId = "Sample" + id;
-                var filePath = "C/:Chetan";
+                fileId = $"NameofFile:  {fliteNo}{id}";
+                var filePath = "FilePath"+ fileId;
                 _fileRep.Initialize(filePath);
             }
             try
